@@ -96,13 +96,17 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ananiy&#39;s blog">
-<meta property="og:url" content="http://ananiy.site/index.html">
+  <meta name="description" content="Why突然想起自己还有一台阿里云的服务器，团购的那种，买的时候还不知道突发性实例的坑，买完了才发现，跑CPU需要消耗积分，积分消耗完CPU的能力就被限制到10%，这不是坑爹么！后来降级到了普通的通用型实例，放着也是闲置，正好最近了解到了devOps的概念，正好拿来练练手。 步骤首先确保docker已安装：跟着官网的教程，在对应的操作系统上安装docker，linux系统记得把docker-comp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云ESC服务器上使用Docker部署Jenkins">
+<meta property="og:url" content="http://ananiy.site/2019/05/19/阿里云ESC服务器上使用Docker部署Jenkins/index.html">
 <meta property="og:site_name" content="ananiy&#39;s blog">
+<meta property="og:description" content="Why突然想起自己还有一台阿里云的服务器，团购的那种，买的时候还不知道突发性实例的坑，买完了才发现，跑CPU需要消耗积分，积分消耗完CPU的能力就被限制到10%，这不是坑爹么！后来降级到了普通的通用型实例，放着也是闲置，正好最近了解到了devOps的概念，正好拿来练练手。 步骤首先确保docker已安装：跟着官网的教程，在对应的操作系统上安装docker，linux系统记得把docker-comp">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-22T14:30:16.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ananiy&#39;s blog">
+<meta name="twitter:title" content="阿里云ESC服务器上使用Docker部署Jenkins">
+<meta name="twitter:description" content="Why突然想起自己还有一台阿里云的服务器，团购的那种，买的时候还不知道突发性实例的坑，买完了才发现，跑CPU需要消耗积分，积分消耗完CPU的能力就被限制到10%，这不是坑爹么！后来降级到了普通的通用型实例，放着也是闲置，正好最近了解到了devOps的概念，正好拿来练练手。 步骤首先确保docker已安装：跟着官网的教程，在对应的操作系统上安装docker，linux系统记得把docker-comp">
 
 
 
@@ -110,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://ananiy.site/">
+  <link rel="canonical" href="http://ananiy.site/2019/05/19/阿里云ESC服务器上使用Docker部署Jenkins/">
 
 
 
@@ -120,7 +124,7 @@
   };
 </script>
 
-  <title>ananiy's blog</title>
+  <title>阿里云ESC服务器上使用Docker部署Jenkins | ananiy's blog</title>
   
 
 
@@ -168,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -207,7 +210,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -269,9 +272,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -303,10 +306,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/19/阿里云ESC服务器上使用Docker部署Jenkins/" class="post-title-link" itemprop="url">阿里云ESC服务器上使用Docker部署Jenkins</a>
+          <h1 class="post-title" itemprop="name headline">阿里云ESC服务器上使用Docker部署Jenkins
+
               
             
           </h1>
@@ -382,9 +383,7 @@
       
 
       
-        
-          
-            <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>突然想起自己还有一台阿里云的服务器，团购的那种，买的时候还不知道突发性实例的坑，买完了才发现，跑CPU需要消耗积分，积分消耗完CPU的能力就被限制到10%，这不是坑爹么！后来降级到了普通的通用型实例，放着也是闲置，正好最近了解到了devOps的概念，正好拿来练练手。</p>
+        <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>突然想起自己还有一台阿里云的服务器，团购的那种，买的时候还不知道突发性实例的坑，买完了才发现，跑CPU需要消耗积分，积分消耗完CPU的能力就被限制到10%，这不是坑爹么！后来降级到了普通的通用型实例，放着也是闲置，正好最近了解到了devOps的概念，正好拿来练练手。</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="首先确保docker已安装："><a href="#首先确保docker已安装：" class="headerlink" title="首先确保docker已安装："></a>首先确保<code>docker</code>已安装：</h3><p>跟着官网的教程，在对应的操作系统上安装<code>docker</code>，linux系统记得把<code>docker-compose</code>也安装上。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ docker --version</span><br><span class="line">Docker version 18.09.6, build 481bc77</span><br><span class="line"></span><br><span class="line">$ docker-compose -v</span><br><span class="line">docker-compose version 1.24.0, build 0aa59064</span><br></pre></td></tr></table></figure>
 <h3 id="创建jenkins需要的volume："><a href="#创建jenkins需要的volume：" class="headerlink" title="创建jenkins需要的volume："></a>创建<code>jenkins</code>需要的volume：</h3><p>官方还是更推荐使用<code>volume</code>去管理容器使用的硬盘。</p>
@@ -410,8 +409,6 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /var/lib/docker/volumes/jenkins/_data/secrets/initialAdminPassword</span><br></pre></td></tr></table></figure>
 <h3 id="初始化jenkins："><a href="#初始化jenkins：" class="headerlink" title="初始化jenkins："></a>初始化<code>jenkins</code>：</h3><p>打开浏览器访问<code>8080</code>，输入初始管理员密码，创建管理员，<code>jenkins</code>的安装就完成了。</p>
 
-          
-        
       
     </div>
 
@@ -434,12 +431,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -449,14 +446,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -476,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -523,6 +530,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先确保docker已安装："><span class="nav-number">2.1.</span> <span class="nav-text">首先确保docker已安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建jenkins需要的volume："><span class="nav-number">2.2.</span> <span class="nav-text">创建jenkins需要的volume：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动容器："><span class="nav-number">2.3.</span> <span class="nav-text">启动容器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看jenkins初始管理员密码："><span class="nav-number">2.4.</span> <span class="nav-text">查看jenkins初始管理员密码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化jenkins："><span class="nav-number">2.5.</span> <span class="nav-text">初始化jenkins：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -651,6 +675,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -666,6 +694,8 @@
 
   
 
+
+  
 
 
   
